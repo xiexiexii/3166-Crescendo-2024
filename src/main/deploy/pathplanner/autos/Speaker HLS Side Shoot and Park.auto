@@ -1,0 +1,31 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.686901867389679,
+      "y": 4.404261589050293
+    },
+    "rotation": -59.58890577044216
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "Spin Up Shoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Speaker HLS Side to Park"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "REV Photon Vision 2024",
+  "choreoAuto": true
+}

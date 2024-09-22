@@ -3,10 +3,13 @@
   "robotLength": 0.9,
   "holonomicMode": true,
   "pathFolders": [
-    "New Folder",
-    "New New Folder"
+    "REV Photon Vision 2024",
+    "REV Swerve Example 2024"
   ],
-  "autoFolders": [],
+  "autoFolders": [
+    "REV Photon Vision 2024",
+    "REV Swerve Example 2024"
+  ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,
   "defaultMaxAngVel": 540.0,

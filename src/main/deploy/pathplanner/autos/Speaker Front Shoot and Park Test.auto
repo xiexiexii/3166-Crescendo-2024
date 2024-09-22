@@ -2,8 +2,8 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 2.0,
-      "y": 7.0
+      "x": 1.348919132661761,
+      "y": 5.5708545340340105
     },
     "rotation": 0
   },
@@ -12,25 +12,19 @@
     "data": {
       "commands": [
         {
-          "type": "path",
-          "data": {
-            "pathName": "Curvy"
-          }
-        },
-        {
-          "type": "parallel",
+          "type": "sequential",
           "data": {
             "commands": [
               {
                 "type": "named",
                 "data": {
-                  "name": "Change LED Color"
+                  "name": "Spin Up Shoot"
                 }
               },
               {
                 "type": "path",
                 "data": {
-                  "pathName": "Move Aside and Spin"
+                  "pathName": "Speaker Front to Park"
                 }
               }
             ]
@@ -39,6 +33,6 @@
       ]
     }
   },
-  "folder": "REV Swerve Example 2024",
+  "folder": "REV Photon Vision 2024",
   "choreoAuto": false
 }

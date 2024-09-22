@@ -1,0 +1,31 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.6889411211013794,
+      "y": 6.71704626083374
+    },
+    "rotation": 59.420792983458185
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "named",
+          "data": {
+            "name": "Spin Up Shoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Speaker AMP Side to Park"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "REV Photon Vision 2024",
+  "choreoAuto": true
+}

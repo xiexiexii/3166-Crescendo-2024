@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 4.5,
-        "y": 6.0
+        "x": 0.835647890917282,
+        "y": 5.5708545340340105
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.49032772059285,
-        "y": 5.194922153460977
+        "x": 2.4199850535875567,
+        "y": 5.298156366784378
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 3.5,
-        "y": 2.5
+        "x": 2.5178713858981263,
+        "y": 2.285765022557244
       },
       "prevControl": {
-        "x": 3.507018149327325,
-        "y": 3.8484011852121176
+        "x": 1.1219209558317567,
+        "y": 3.0549281886324193
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,11 +39,11 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -117.55737462879132,
+    "rotation": 0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "REV Swerve Example 2024",
+  "folder": "REV Photon Vision 2024",
   "previewStartingState": null,
   "useDefaultConstraints": false
 }

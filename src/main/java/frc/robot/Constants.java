@@ -9,6 +9,8 @@ import com.revrobotics.CANSparkBase.IdleMode;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.XboxController.Axis;
+import edu.wpi.first.wpilibj.XboxController.Button;
 
 public final class Constants {
   public static final class DriveConstants {
@@ -39,15 +41,15 @@ public final class Constants {
       public static final double kBackRightChassisAngularOffset = Math.PI / 2;
 
       // DRIVE CAN IDs
-      public static final int kFrontLeftDrivingCanId = 3;
-      public static final int kRearLeftDrivingCanId = 2;
-      public static final int kFrontRightDrivingCanId = 7;
-      public static final int kRearRightDrivingCanId = 6;
+      public static final int kFrontLeftDrivingCanId = 8;
+      public static final int kRearLeftDrivingCanId = 6;
+      public static final int kFrontRightDrivingCanId = 4;
+      public static final int kRearRightDrivingCanId = 2;
 
-      public static final int kFrontLeftTurningCanId = 4;
-      public static final int kRearLeftTurningCanId = 1;
-      public static final int kFrontRightTurningCanId = 8;
-      public static final int kRearRightTurningCanId = 5;
+      public static final int kFrontLeftTurningCanId = 7;
+      public static final int kRearLeftTurningCanId = 5;
+      public static final int kFrontRightTurningCanId = 3;
+      public static final int kRearRightTurningCanId = 1;
 
       public static final boolean kGyroReversed = true;
   }
@@ -119,23 +121,40 @@ public final class Constants {
     public static final int blinkinPort = 0;  
   }
 
-  public static final class Controls {
-    //driver controls
-        public static final int setXValue = 1; //A
+  public static final class ShooterConstants {
+    public static final int kShootMotor1 = 9;
+    public static final int kShootMotor2 = 8;
+    public static final int kTriggerMotor = 7;
 
-        /*
-        //claw
-        public static final int clawIntakeAxis = 0; //right trigger
-        public static final int clawOuttakeAxis = 0; //left trigger
+    public static final double kAmpShootSpeed = 0.8;
+    public static final double kSpeakShootSpeed = 0.9;
+    public static final double kSpeakKickerShootSpeed = 0.8;
+    public static final double kSpeakReverseSpeed = 0.7;
+    public static final double kAmpTopSpeed = 0.25;
+    public static final double kAmpBottomSpeed = 0.9;
+  }
 
-        //arm positions
-        public static final int armSetToClimbButton = 0; //Y
-        public static final int armSetToGroundButton = 0; //A
-        public static final int armSetToPassButton = 0; //B
+  public static final class ControllerConstants {
 
-        //climbing
-        public static final int climbForwardButton = 0; //R bumper
-        public static final int climbBackwardButton = 0; //L bumper
-        */
+    // Driver controls
+    public static final int climbButton = Button.kY.value; // Y
+    public static final int descendButton = Button.kA.value; // A
+    public static final int intakeButton = Button.kB.value; // B
+    public static final int speakerShootTrigger = Axis.kLeftTrigger.value; // Left Trig
+    public static final int speakerSpinUpTrigger = Axis.kRightTrigger.value; // Right Trig
+    public static final int ampShootButton = Button.kLeftBumper.value; // Left Bump
+    public static final int ampSpinUpButton = Button.kRightBumper.value; // Right Bump
+  }
+
+  public static class AutoTimeConstants {
+    public static final double spinUpAutoTime1 = 2.0;
+    public static final double spinUpAutoTime2 = 1.5;
+    public static final double shootAutoTime1 = 2.5;
+    public static final double shootAutoTime2 = 2.0;
+  }
+
+  public static final class ClimberConstants {
+    public static final int kClimberMotor1 = 4;
+    public static final double kClimbSpeed = 0.5;
   }
 }
