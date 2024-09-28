@@ -1,0 +1,37 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.4,
+      "y": 7
+    },
+    "rotation": -7.3743775751261e-22
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "AMP Wall to Speaker"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Spin Up Shoot"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "AMP Speaker Park.1"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "REV Photon Vision 2024",
+  "choreoAuto": true
+}

@@ -1,0 +1,25 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.4,
+      "y": 4
+    },
+    "rotation": -5.955269885864396e-28
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Center Forward"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "REV Photon Vision 2024",
+  "choreoAuto": true
+}

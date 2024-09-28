@@ -44,6 +44,8 @@ public class ShooterSubsystem extends SubsystemBase {
     }
 
     public void stopShoot() {
+        m_shootMotor1.set(0);
+        m_shootMotor2.set(0);
         m_shootMotor3.set(0);
     }
 

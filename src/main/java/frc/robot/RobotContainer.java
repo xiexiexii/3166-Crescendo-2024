@@ -5,6 +5,7 @@ package frc.robot;
 import com.pathplanner.lib.auto.NamedCommands;
 
 import edu.wpi.first.math.MathUtil;
+import edu.wpi.first.wpilibj.GenericHID.RumbleType;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Constants.ControllerConstants;
@@ -66,13 +67,13 @@ public class RobotContainer {
     NamedCommands.registerCommand("Spin Up Shoot", new SpinUpShootCommand(m_ShooterSubsystem));
     NamedCommands.registerCommand("Spin Up Shoot Short", new SpinUpShootShortCommand(m_ShooterSubsystem));
 
-    // TODO: New Autos!! 3 forward + park, amp side shoot and park, tune HLS Speaker Side Shoot Park
-
     // Autos
     m_chooser.addOption("Speaker Front Shoot and Park", m_robotDrive.getAuto("Speaker Front Shoot and Park"));
-    // m_chooser.addOption("Speaker AMP Side Shoot and Park", m_robotDrive.getAuto("Speaker AMP Side Shoot and Park"));
-    m_chooser.addOption("HLS Speaker Side Shoot Park", m_robotDrive.getAuto("HLS Speaker Shoot Park"));
-
+    m_chooser.addOption("AMP Speaker Shoot Park", m_robotDrive.getAuto("AMP Speaker Shoot Park"));
+    m_chooser.addOption("HLS Speaker Shoot Park", m_robotDrive.getAuto("HLS Speaker Shoot Park"));
+    m_chooser.addOption("Center Park", m_robotDrive.getAuto("Center Park"));
+    m_chooser.addOption("AMP Park", m_robotDrive.getAuto("AMP Park"));
+    m_chooser.addOption("HLS Park", m_robotDrive.getAuto("HLS Park"));
   }
 
   // Use this method to define your button to command mappings. Buttons can be
@@ -88,12 +89,14 @@ public class RobotContainer {
       .whileFalse(
         new InstantCommand(() -> m_ShooterSubsystem.stopIntake(), m_ShooterSubsystem)
       );
-
+    
     new Trigger(() -> m_driverController.getRawAxis(ControllerConstants.speakerSpinUpTrigger) > 0.05)
       .whileTrue(
-        new InstantCommand(() -> m_ShooterSubsystem.speakerSpinup(), m_ShooterSubsystem))
+        new InstantCommand(() -> m_ShooterSubsystem.speakerSpinup(), m_ShooterSubsystem).alongWith(
+        new InstantCommand(() -> m_driverController.getHID().setRumble(RumbleType.kBothRumble, 1))))
       .whileFalse(
-        new InstantCommand(() -> m_ShooterSubsystem.stopSpinup(), m_ShooterSubsystem)
+        new InstantCommand(() -> m_ShooterSubsystem.stopSpinup(), m_ShooterSubsystem).alongWith(
+        new InstantCommand(() -> m_driverController.getHID().setRumble(RumbleType.kBothRumble, 0)))
       );
 
     new Trigger(() -> m_driverController.getRawAxis(ControllerConstants.speakerShootTrigger) > 0.05)
@@ -105,9 +108,11 @@ public class RobotContainer {
 
     new JoystickButton(m_driverController.getHID(), ControllerConstants.ampSpinUpButton)
       .whileTrue(
-        new InstantCommand(() -> m_ShooterSubsystem.ampSpinUp(), m_ShooterSubsystem))
+        new InstantCommand(() -> m_ShooterSubsystem.ampSpinUp(), m_ShooterSubsystem).alongWith(
+        new InstantCommand(() -> m_driverController.getHID().setRumble(RumbleType.kBothRumble, 0.5))))
       .whileFalse(
-        new InstantCommand(() -> m_ShooterSubsystem.stopSpinup(), m_ShooterSubsystem)
+        new InstantCommand(() -> m_ShooterSubsystem.stopSpinup(), m_ShooterSubsystem).alongWith(
+        new InstantCommand(() -> m_driverController.getHID().setRumble(RumbleType.kBothRumble, 0)))
       );
     
     new JoystickButton(m_driverController.getHID(), ControllerConstants.ampShootButton)
